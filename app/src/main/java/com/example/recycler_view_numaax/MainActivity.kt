@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         for(i in 0..500) {
             val plant = Plant(imageIdList[index], "Plant Name $index")
             adapter.addPlant(plant)
+            if (index > 4) index = 0
+            index++
         }
 
 //        binding.btnAddPlant.setOnClickListener {
