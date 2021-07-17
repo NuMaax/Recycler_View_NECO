@@ -36,7 +36,7 @@ class PlantAdapter : RecyclerView.Adapter<PlantAdapter.PlantHolder>() {
         return plantList.size
     }
 
-    // доп. ф-ция, изменить (plant: Plant), plantList
+    // доп. ф-ция, добавляет элемент в массив, изменить (plant: Plant), plantList
     fun addPlant(plant: Plant){
         plantList.add(plant)
         notifyDataSetChanged()
