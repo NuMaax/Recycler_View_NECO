@@ -30,10 +30,10 @@ class MainActivity : AppCompatActivity() {
         binding.rcView.layoutManager = LinearLayoutManager(this)
         binding.rcView.adapter = adapter
 
-        for(i in 0..500) {
+        for(i in 0..50) {
+            if (index > 4) index = 0
             val plant = Plant(imageIdList[index], "Plant Name $index")
             adapter.addPlant(plant)
-            if (index > 4) index = 0
             index++
         }
 
