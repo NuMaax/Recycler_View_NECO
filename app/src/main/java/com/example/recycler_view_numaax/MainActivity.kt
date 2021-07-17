@@ -29,11 +29,17 @@ class MainActivity : AppCompatActivity() {
     private fun initRecyclerView() {
         binding.rcView.layoutManager = LinearLayoutManager(this)
         binding.rcView.adapter = adapter
-        binding.btnAddPlant.setOnClickListener {
-            if (index > 4) index = 0
+
+        for(i in 0..500) {
             val plant = Plant(imageIdList[index], "Plant Name $index")
             adapter.addPlant(plant)
-            index++
         }
+
+//        binding.btnAddPlant.setOnClickListener {
+//            if (index > 4) index = 0
+//            val plant = Plant(imageIdList[index], "Plant Name $index")
+//            adapter.addPlant(plant)
+//            index++
+//        }
     }
 }
