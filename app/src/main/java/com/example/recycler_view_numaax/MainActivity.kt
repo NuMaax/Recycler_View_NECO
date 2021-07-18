@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         binding.rcView.adapter = adapter
 
         for (i in 1..50) {
-            if (index > imageIdList.size - 1) index = 0
+            if (index > personLists.listOfImagesId.size - 1) index = 0
 //            val person = Person(
 //                imageIdList[index],
 //                "Person Name: $i",
