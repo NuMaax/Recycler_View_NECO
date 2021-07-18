@@ -2,13 +2,14 @@ package com.example.recycler_view_numaax
 // https://www.youtube.com/watch?v=4pevVON0v-U&list=PLmjT2NFTgg1fdHN-9Wn4XYr-IOuadxMm5&index=30
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recycler_view_numaax.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val adapter = PlantAdapter()
+    private val adapter = PersonAdapter()
     private val imageIdList = listOf(
         R.drawable.plant01,
         R.drawable.plant02,
@@ -27,19 +28,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        binding.rcView.layoutManager = LinearLayoutManager(this)
+//        binding.rcView.layoutManager = LinearLayoutManager(this)
+        binding.rcView.layoutManager = ConstraintLayout(this)
         binding.rcView.adapter = adapter
 
-        for(i in 0..500) {
-            val plant = Plant(imageIdList[index], "Plant Name $index")
-            adapter.addPlant(plant)
+        for(i in 0..10) {
+            if (index > 4) index = 0
+            val person = Person(imageIdList[index],
+                "Person Name $index", "personAge = $index")
+            adapter.addPerson(person)
+            index++
         }
-
-//        binding.btnAddPlant.setOnClickListener {
-//            if (index > 4) index = 0
-//            val plant = Plant(imageIdList[index], "Plant Name $index")
-//            adapter.addPlant(plant)
-//            index++
-//        }
     }
 }
