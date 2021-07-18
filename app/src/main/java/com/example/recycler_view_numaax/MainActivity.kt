@@ -31,12 +31,12 @@ class MainActivity : AppCompatActivity() {
         binding.rcView.layoutManager = LinearLayoutManager(this@MainActivity)
         binding.rcView.adapter = adapter
 
-        for (i in 0..10) {
+        for (i in 1..10) {
             if (index > 2) index = 0
             val person = Person(
                 imageIdList[index],
                 "Person Name: $i",
-                "Person Age: $i",
+                "Person Age: $index",
             )
             adapter.addPerson(person)
             index++
