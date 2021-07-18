@@ -11,11 +11,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val adapter = PersonAdapter()
     private val imageIdList = listOf(
-        R.drawable.plant01,
-        R.drawable.plant02,
-        R.drawable.plant03,
-        R.drawable.plant04,
-        R.drawable.plant05,
+        R.drawable.person_sergey,
+        R.drawable.person_andrey,
+        R.drawable.person_igor
     )
     private var index = 0
 
@@ -28,14 +26,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-//        binding.rcView.layoutManager = LinearLayoutManager(this)
-        binding.rcView.layoutManager = ConstraintLayout(this)
+        binding.rcView.layoutManager = LinearLayoutManager(this@MainActivity)
         binding.rcView.adapter = adapter
-
         for(i in 0..10) {
-            if (index > 4) index = 0
+            if (index > 2) index = 0
             val person = Person(imageIdList[index],
-                "Person Name $index", "personAge = $index")
+                "Person Name: $index", "Person Age: $index")
             adapter.addPerson(person)
             index++
         }

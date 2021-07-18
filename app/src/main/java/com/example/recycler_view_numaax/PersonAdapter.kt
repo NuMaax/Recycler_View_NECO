@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recycler_view_numaax.databinding.NamesItemBinding
 
-class PersonAdapter : RecyclerView.Adapter<PersonAdapter.PlantHolder>() {
+class PersonAdapter : RecyclerView.Adapter<PersonAdapter.PersonHolder>() {
 
     // список, откуда адаптер берет данные, может быть БД
     private val personList = ArrayList<Person>()
 
     // наполнение. изменить в "fun bind"
-    class PlantHolder(item: View) : RecyclerView.ViewHolder(item) {
+    class PersonHolder(item: View) : RecyclerView.ViewHolder(item) {
 
         private val binding = NamesItemBinding.bind(item)
 
@@ -24,13 +24,13 @@ class PersonAdapter : RecyclerView.Adapter<PersonAdapter.PlantHolder>() {
     }
 
     // изменить plant_item. эта ф-ция берет пустой шаблон и надувает его
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.names_item, parent, false)
-        return PlantHolder(view)
+        return PersonHolder(view)
     }
 
     // изменить personList.
-    override fun onBindViewHolder(holder: PlantHolder, position: Int) {
+    override fun onBindViewHolder(holder: PersonHolder, position: Int) {
         holder.bind(personList[position])
     }
 
