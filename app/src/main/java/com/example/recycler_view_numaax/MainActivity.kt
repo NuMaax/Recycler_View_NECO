@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         R.drawable.person_igor,
     )
     private var index = 0
+    private val personLists = PersonLists()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,10 +33,15 @@ class MainActivity : AppCompatActivity() {
 
         for (i in 1..50) {
             if (index > imageIdList.size - 1) index = 0
+//            val person = Person(
+//                imageIdList[index],
+//                "Person Name: $i",
+//                "Person Age: $i",
+//            )
             val person = Person(
-                imageIdList[index],
-                "Person Name: $i",
-                "Person Age: $index",
+                personLists.listOfImagesId[index],
+                personLists.listOfNames[index],
+                personLists.listOfAges[index],
             )
             adapter.addPerson(person)
             index++
