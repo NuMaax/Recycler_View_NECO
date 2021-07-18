@@ -30,18 +30,11 @@ class MainActivity : AppCompatActivity() {
         binding.rcView.layoutManager = LinearLayoutManager(this)
         binding.rcView.adapter = adapter
 
-        for(i in 0..50) {
+        for(i in 0..10) {
             if (index > 4) index = 0
             val plant = Plant(imageIdList[index], "Plant Name $index")
             adapter.addPlant(plant)
             index++
         }
-
-//        binding.btnAddPlant.setOnClickListener {
-//            if (index > 4) index = 0
-//            val plant = Plant(imageIdList[index], "Plant Name $index")
-//            adapter.addPlant(plant)
-//            index++
-//        }
     }
 }
