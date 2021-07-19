@@ -10,13 +10,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val adapter = PersonAdapter()
-    private val imageIdList = listOf(
-        R.drawable.person_sergey,
-        R.drawable.person_andrey,
-        R.drawable.person_igor,
-    )
-    private var index = 0
     private val personLists = PersonLists()
+    private var index = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +26,8 @@ class MainActivity : AppCompatActivity() {
         binding.rcView.layoutManager = LinearLayoutManager(this@MainActivity)
         binding.rcView.adapter = adapter
 
-        for (i in 1..50) {
+        for (i in 1..25) {
             if (index > personLists.listOfImagesId.size - 1) index = 0
-//            val person = Person(
-//                imageIdList[index],
-//                "Person Name: $i",
-//                "Person Age: $i",
-//            )
             val person = Person(
                 personLists.listOfImagesId[index],
                 personLists.listOfNames[index],

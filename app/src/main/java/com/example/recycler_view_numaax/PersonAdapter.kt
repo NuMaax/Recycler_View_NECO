@@ -51,6 +51,5 @@ class PersonAdapter : RecyclerView.Adapter<PersonAdapter.PersonHolder>() {
         personList.clear()
         personList.addAll(list)
         notifyDataSetChanged()
-
     }
 }
