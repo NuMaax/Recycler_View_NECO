@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-//        binding.rcView.layoutManager = LinearLayoutManager(this)
-        binding.rcView.layoutManager = ConstraintLayout(this)
+        binding.rcView.layoutManager = LinearLayoutManager(this@MainActivity)
+//        binding.rcView.layoutManager = ConstraintLayout(this@MainActivity)
         binding.rcView.adapter = adapter
 
         for(i in 0..10) {
